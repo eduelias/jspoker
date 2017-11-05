@@ -2,7 +2,9 @@
     <div class="container-fluid">
         <!-- Brand and toggle get grouped for better mobile display -->
         <div class="navbar-header">
-            <a class="navbar-brand" [routerLink]="['']">jspoker</a>
+            <a class="navbar-brand" [routerLink]="['']">
+                <h1>jspoker</h1>
+            </a>
         </div>
 
         <!-- Collect the nav links, forms, and other content for toggling -->
@@ -10,17 +12,17 @@
             <ul class="nav navbar-nav">
                 <li routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}"><a [routerLink]="['']">Home</a></li>
                 <li routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}"><a [routerLink]="['dashboard']" *ngIf="(isLoggedIn|async)">Dashboard</a></li>
-                <li routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}"><a
-                        [routerLink]="['all-in-one']" *ngIf="!(isLoggedIn|async)">All In One</a></li>
+                <li routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}"><a [routerLink]="['all-in-one']" *ngIf="!(isLoggedIn|async)">All In One</a></li>
             </ul>
             <ul class="nav navbar-nav navbar-right">
                 <li *ngIf="(isLoggedIn|async)" class="navbar-text">{{(currentUser()|async).email}}</li>
-                <li routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}" *ngIf="!(isLoggedIn|async)"><a
-                        [routerLink]="['login']">Login</a></li>
+                <li routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}" *ngIf="!(isLoggedIn|async)"><a [routerLink]="['login']">Login</a></li>
                 <li *ngIf="(isLoggedIn|async)"><a (click)="logout()" href="#">Logout</a></li>
             </ul>
-        </div><!-- /.navbar-collapse -->
-    </div><!-- /.container-fluid -->
+        </div>
+        <!-- /.navbar-collapse -->
+    </div>
+    <!-- /.container-fluid -->
 </nav>
 
 
